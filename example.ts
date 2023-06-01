@@ -1,14 +1,22 @@
-import {
-  app,
-  contentType,
-  get,
-  post,
-  redirect,
-} from "https://denopkg.com/syumai/dinatra/mod.ts";
+import { Hono } from "https://deno.land/x/hono/mod.ts";
+import { serve } from "https://deno.land/std/http/server.ts";
 
-const greeting = "<h1>Hello 222 From Deno on Fly!</h1>";
+const app = new Hono();
 
-app(
-  get("/", () => greeting),
-  get("/:id", ({ params }) => greeting + `</br>and hello to ${params.id}`),
-);
+app.get("/", async (c) => {
+  const client = Deno.createHttpClient({
+    proxy: { url: "http://123.60.143.98:7890" },
+  });
+  //const response = await fetch("https://myserver.com", );
+
+  let ssx = "https://api-ipv4.ip.sb/ip ";
+  let ss = await fetch("https://api-ipv4.ip.sb/ip ");
+  // let s = await ss.json();
+  let xx = await ss.text();
+  console.log("xdo:" + ssx);
+  console.log(xx);
+  return fetch(ssx, { client });
+  //c.text(xx);
+});
+
+serve(app.fetch);

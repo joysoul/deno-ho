@@ -2,7 +2,7 @@
   "tasks": {
     "docker": {
       "name": "Run container",
-      "command": "deno run --allow-net --unstable index.ts",
+      "command": "deno run --allow-net --unstable example.ts",
       "runAtStart": true
     }
   }
