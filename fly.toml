@@ -10,7 +10,7 @@ primary_region = "hkg"
   PORT = "8080"
 
 [processes]
-  app = "run --allow-net ./example.ts"
+  app = "run --allow-net --unstable ./index.ts"
 
 [http_service]
   internal_port = 8080
