@@ -13,7 +13,7 @@ app.get("/", async (c) => {
   let ss = await fetch("https://api-ipv4.ip.sb/ip ");
   // let s = await ss.json();
   let xx = await ss.text();
-  console.log("do:" + ssx);
+  console.log("xdo:" + ssx);
   console.log(xx);
   return fetch(ssx, { client });
   //c.text(xx);
