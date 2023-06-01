@@ -3,6 +3,6 @@ import { serve } from "https://deno.land/std/http/server.ts";
 
 const app = new Hono();
 
-app.get("/", (c) => c.text("aaa Hello Deno!"));
+app.get("/", (c) => c.text("1aaa Hello Deno!"));
 
 serve(app.fetch);
